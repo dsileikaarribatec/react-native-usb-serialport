@@ -12,6 +12,10 @@ buildscript {
 
 apply plugin: 'com.android.library'
 
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
 android {
     compileSdkVersion safeExtGet("usbSerialPortCompiledSdkVersion", 28)
     buildToolsVersion "28.0.3"
