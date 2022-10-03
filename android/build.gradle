@@ -13,7 +13,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion safeExtGet("usbSerialPortCompiledSdkVersion", 28)
     buildToolsVersion "28.0.3"
 
     compileOptions {
@@ -22,8 +22,8 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion safeExtGet("usbSerialPortMinSdkVersion", 16)
+        targetSdkVersion safeExtGet("usbSerialPortTargetSdkVersion", 28)
         versionCode 1
         versionName "1.0"
     }
@@ -38,10 +38,10 @@ repositories {
 
 dependencies {
     implementation 'com.vdurmont:semver4j:3.1.0'
-    implementation 'com.google.guava:guava:20.0'
+    implementation 'com.google.guava:guava:31.1-jre'
     implementation 'com.facebook.react:react-native:+'
+    implementation 'com.github.felHR85:UsbSerial:6.1.0'
 
-    implementation fileTree(dir: 'libs', include: ['usbserial-6.0.5-release.aar'])
     // if use below `compileOnly files` will cause
     // java.lang.ClassNotFoundException: Didn't find class "com.felhr.usbserial.UsbSerialDevice"
     // so have to use above `implementation fileTree` again
