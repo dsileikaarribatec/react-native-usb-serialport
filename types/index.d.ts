@@ -110,7 +110,7 @@ interface RNSerialportStatic {
 
   /**
    * Returns support status
-   * 
+   *
    * @param {string} deviceName
    * @returns {Promise<boolean>}
    * @memberof RNSerialportStatic
@@ -230,7 +230,7 @@ interface RNSerialportStatic {
    * @param {string} data
    * @memberof RNSerialportStatic
    */
-  writeString(data: string): void;
+  writeString(deviceName: string, data: string): void;
 
   /**
    * Writes Base64 string to port
@@ -238,7 +238,7 @@ interface RNSerialportStatic {
    * @param {string} data
    * @memberof RNSerialportStatic
    */
-  writeBase64(data: string): void;
+  writeBase64(deviceName: string, data: string): void;
 
   /**
    * Writes hex string to port
@@ -246,7 +246,7 @@ interface RNSerialportStatic {
    * @param {string} data
    * @memberof RNSerialportStatic
    */
-  writeHexString(data: string): void
+  writeHexString(deviceName: string, data: string): void
 
   /**
    * Integer array convert to Utf16 string
