@@ -85,6 +85,7 @@ interface RNSerialportStatic {
    * @memberof RNSerialportStatic
    */
   startUsbService(): void;
+
   /**
    * Stops the service and Usb listener
    *
@@ -225,6 +226,13 @@ interface RNSerialportStatic {
   disconnect(): void;
 
   /**
+   * Closes connections to all devices
+   *
+   * @memberof RNSerialportStatic
+   */
+  disconnectAllDevices(): void;
+
+  /**
    * Writes string to port
    *
    * @param {string} data
@@ -266,4 +274,5 @@ interface RNSerialportStatic {
    */
   hexToUtf16(hex: string): string
 }
+
 export var RNSerialport: RNSerialportStatic;

@@ -42,7 +42,7 @@ repositories {
 
 dependencies {
     implementation 'com.vdurmont:semver4j:3.1.0'
-    implementation 'com.google.guava:guava:20.0'
+    implementation 'com.google.guava:guava:31.1-jre'
     implementation 'com.facebook.react:react-native:+'
 
     compileOnly files('libs/usbserial-6.0.5-release.aar')
